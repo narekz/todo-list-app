@@ -24,8 +24,7 @@ const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
-let listArray = [];
-let id = 0;
+
 
 // adds a new todo list item to the list
 function addToDo (toDo, id, done, trash){
@@ -33,16 +32,18 @@ function addToDo (toDo, id, done, trash){
     const complete = done ? check : uncheck;
     const line = done ? lineThrough : ""; 
     const text = `<li class="item">
-                    <i class="fa ${complete}" job="complete" id="${id}"></i>
+                    <i class="co fa ${complete}" job="complete" id="${id}"></i>
                     <p class="text ${line}"> ${toDo} </p>
                     <i class="de fa fa-trash-o" job="delete" id="${id}"></i>
                 </li>`;
-
 // inserts an HTML right before the todo list item
     const position = "afterbegin";
+
+    
     list.insertAdjacentHTML(position, text);
 }
-
+let listArray = [];
+let id = 0;
 
 function completeToDo(element) {
     element.classList.toggle(check);
